@@ -14,9 +14,7 @@ function Home() {
     let formData = new FormData(form); // Create form data object
     let formDataObject = Object.fromEntries(formData.entries()); // key value pairs
     let json = JSON.stringify(formDataObject);
-    localStorage.setItem("JSON", json);
-
-    console.log(json);
+    localStorage.setItem("JSON", json); // store user input to local storage
     navigate('/matching');
   }
 
@@ -28,7 +26,7 @@ function Home() {
         <label>Please enter the type of the charity: </label>
         <input type="text" name="theme" id="theme_entry" required></input>
         <label>Please enter your budget: </label> 
-        <input type="text" name="budget" id="budget_entry" required></input>
+        <input type="number" name="budget" id="budget_entry" required></input>
         <button type="submit" id="submit">Submit preferences</button>
         </form>
       </div>

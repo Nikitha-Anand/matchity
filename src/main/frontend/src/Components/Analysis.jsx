@@ -1,14 +1,16 @@
 import { GoogleGenAI } from "@google/genai";
+import data from './db.json' with { type: 'json' };
 
 const genAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
-// sample input
-let charity1 = {
-  "name": "charity1",
-  "budget": 4000,
-  "urgency": false,
-  "match": true,
-}
+const charities = [ data ];
+
+// Get the company
+const js = localStorage.getItem("JSON");
+const userInput = JSON.parse(js);
+
+const companyTheme = userInput["theme"];
+const companyBudget = userInput["budget"];
 
 // search through the web
 // what is overall feeling of charity
@@ -16,9 +18,6 @@ let charity1 = {
 // organise budget accordingly
 
 // info comes from JSON file
-let charities = [charity1];
-const companyValues = [];
-const companyBudget = 4000;
 
 function format(array) {
   let string = 0;
@@ -34,7 +33,7 @@ function format(array) {
 async function generatingAnalysis(list) {
     const response = await genAI.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: `Given a ${ companyBudget } budget in JSON format according to the following charities: ${ format(charities) } and determine which ones would be best suited towards according to the following company values ${ format(companyValues) } `,
+        contents: `Given a ${ companyBudget } budget in JSON format according to the following charities: ${ format(charities) } and determine which ones would be best suited according these company values: ${ format(companyValues) } `,
     });
     return response.text;
 }
