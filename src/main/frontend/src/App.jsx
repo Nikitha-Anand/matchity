@@ -1,20 +1,20 @@
 import { useState } from 'react'
-import AnalyseData from './gem'
 import './App.css'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './Pages/home'
+import Matching from './Pages/Matching'
 
-// Matchity Results
 
+// Matchity Result
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <p>hello</p>
-        <input name="Prompt" type="text" id="information"></input>
-        <input type="submit"></input>
-      </div>
-    </>
+  return ( // call form handler on submit, home is default route
+    <Router>
+      <Routes>
+        <Route path="/" element={ <Home/> }/>
+        <Route path="/matching" element={ <Matching/> }/>
+      </Routes>
+    </Router>
   )
 
 }
