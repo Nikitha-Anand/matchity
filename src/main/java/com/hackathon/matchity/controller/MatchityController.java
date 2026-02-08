@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin("http://localhost:63342/")
 @RequestMapping("/api/matchity")
 public class MatchityController {
 
