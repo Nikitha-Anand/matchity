@@ -7,6 +7,10 @@ const urgencyEl = document.getElementById("urgency");
 const yesBtn = document.getElementById("yesButtonLink");
 const noBtn = document.getElementById("noButtonLink");
 
+const finalizeBtn = document.getElementById("finalizeLink");
+let finalized = false;
+
+
 let data = [];
 let currentIndex = 0;
 
@@ -38,16 +42,19 @@ function showCurrent() {
         : "Urgency: Normal";
 }
 
-async function updateMatch(id, matchValue) {
+async function updateMatch(item, matchValue) {
     try {
-        await fetch(`http://localhost:8080/api/matchity/${id}`, {
+        const updated = {
+            ...item,
+            match: matchValue
+        };
+
+        await fetch(`http://localhost:8080/api/matchity`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                match: matchValue
-            })
+            body: JSON.stringify(updated)
         });
     } catch (err) {
         console.error("Failed to update match:", err);
@@ -55,30 +62,36 @@ async function updateMatch(id, matchValue) {
 }
 
 yesBtn.addEventListener("click", async () => {
+    if (finalized) return;
+
     const current = data[currentIndex];
-
-    console.log("User matched with:", current);
-
-    await updateMatch(current.id, true);
+    await updateMatch(current, true);
 
     currentIndex++;
     showCurrent();
 });
 
 noBtn.addEventListener("click", async () => {
+    if (finalized) return;
+
     const current = data[currentIndex];
-
-    console.log("User skipped:", current);
-
-    await updateMatch(current.id, false);
+    await updateMatch(current, false);
 
     currentIndex++;
     showCurrent();
 });
 
 
+finalizeBtn.addEventListener("click", () => {
+    finalized = true;
+    dialog.close();
+    console.log("Matching finalized by user");
+
+});
+
+
 function showCurrent() {
-    if (currentIndex >= data.length) {
+    if (finalized || currentIndex >= data.length) {
         dialog.close();
         alert("You’ve seen all matches!");
         return;
@@ -97,4 +110,5 @@ function showCurrent() {
         urgencyEl.className = "urgency-badge normal";
     }
 }
+
 
