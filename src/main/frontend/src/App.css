@@ -28,6 +28,11 @@ button {
 
 input {
   max-width: 200px;
+  border: 1px lightgray solid;
+}
+
+p {
+  max-width: 20%;
 }
 
 /* Charity card CSS */

@@ -1,24 +1,27 @@
-<!-- CONTENT HAS ALREADY BEEN MIGRATED TO REACT -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    
+    <title>Matchity</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
 
-<h1>Please enter your preferences:</h1>
+<h1>Welcome to Matchity</h1>
+<p>Matchity is a system that connects anyone, whether individual or company, with Charities tailored to your needs
+</p>
+<p>Enter your budget and values and you will be matched with different charities accordinly</p>
+<h1 id="head">Enter your preferences</h1>
 
 <form action="/submit-data" method="POST">
-    <label for="theme_entry">Please enter the type of the charity: </label>
-    <input type="text" name="theme" id="theme_entry" required>
-
-    <label for="budget_entry">Please enter your budget: </label> 
-    <input type="text" name="budget" id="budget_entry" required>
-    <button type="submit" id="submit"> Submit preferences </button>
+    <div class="input-container">
+        <label for="theme_entry">Values</label>
+        <input type="text" name="theme" id="theme_entry" required>
+        <label for="budget_entry">Budget</label> 
+        <input type="number" name="budget" id="budget_entry" required>
+        <button type="submit" id="submit">Submit preferences </button>
+    </div>
 </form>
 
 <script src="Matchity_input_script.js"> </script>
