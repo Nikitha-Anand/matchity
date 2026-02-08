@@ -2,38 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Matchity</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1> MATCHITY </h1>
-<h2> Here are your options: </h2>
+<h1 class="title">MATCHITY</h1>
+<h2 class="subtitle">Here are your best matches</h2>
 
-<!-- display option one by one using js -->
+<dialog id="charities" class="card">
+    <div class="card-content">
+        <h3 id="name"></h3>
+        <p id="description"></p>
+        <span id="urgency" class="urgency-badge"></span>
+    </div>
 
-<dialog id="charities">
+    <div class="actions">
+        <button id="noButtonLink" class="btn no">No</button>
+        <button id="yesButtonLink" class="btn yes">Yes</button>
+    </div>
 
-    
-
-    <!-- use <button> for actions and <a> to navigate to other pages -->
-    <button type="button" id="yesButtonLink"> Yes </button>
-
-    <button type="button" id="noButtonLink"> No </button>
-    
+    <button id="finalizeLink" class="finalize">
+        Finalize matching
+    </button>
 </dialog>
 
-
-
-
-<embed src="one_page.pdf" type="application/pdf" width="100" height="100"> </embed>
-
-<button type="button" id="finalizeLink"> Finalize matching </button>
-<script src="Matchity_matching_script"> </script>
-
-<!--type="submit" submits form data to a server-->
-
-<script src="Matchity_matching_script.js"></script> 
-
+<script src="Matchity_matching_script.js"></script>
 </body>
 </html>
