@@ -6,6 +6,7 @@ import '/src/App.css'
 
 function Matching() {
     const navigate = useNavigate();
+    localStorage.setItem("current-charity", 0);
 
     return (
         <>
