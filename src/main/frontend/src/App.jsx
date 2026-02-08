@@ -3,7 +3,7 @@ import './App.css'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Pages/home'
 import Matching from './Pages/Matching'
-
+import Results from './Pages/Results'
 
 // Matchity Result
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path="/matching" element={ <Matching/> }/>
+        <Route path="/results" element={ <Results/> } />
       </Routes>
     </Router>
   )

@@ -1,3 +1,6 @@
+// CONTENT HAS ALREADY BEEN MIGRATED TO REACT
+
+
 //save the input info into a JSON file to be read 
 // by the "matching" code
 
