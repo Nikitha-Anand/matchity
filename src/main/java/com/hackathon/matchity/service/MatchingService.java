@@ -15,7 +15,7 @@ public class MatchingService {
         this.repository = repository;
     }
 
-    /**
+    /*
      * GET all charities and score them based on default company criteria.
      */
     public Map<Matchity, Integer> getAllMatches() {
