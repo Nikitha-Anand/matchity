@@ -14,9 +14,9 @@ function Matching() {
             <h1>MATCHITY</h1>
             <h2>Here are your options: </h2>
 
-            <div id="charities">
+            {/* <div id="charities">
                 <Charity></Charity>
-            </div>
+            </div> */}
             <button type="button" id="finalizeLink" onClick={ () => { navigate('/results')} }> Finalize matching </button>
         </>
     )

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './Pages/home'
+import Home from './Pages/Home'
 import Matching from './Pages/Matching'
 import Results from './Pages/Results'
 
