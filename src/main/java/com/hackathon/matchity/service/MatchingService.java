@@ -54,7 +54,7 @@ public class MatchingService {
         return charities;
     }
 
-    /**
+    /*
      * Scoring logic based on budget coverage, theme intersection, and urgency.
      */
     private int calculateScore(Matchity charity, List<String> companyThemes, int companyBudget) {
