@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-// import './App.css'
+import '/src/App.css'
 
 // Matchity Result
 
@@ -13,17 +13,18 @@ function Home() {
     let form = event.target;
     let formData = new FormData(form); // Create form data object
     let formDataObject = Object.fromEntries(formData.entries()); // key value pairs
-    console.log(formDataObject); // SEND TO DATABASE
+    let json = JSON.stringify(formDataObject);
+    localStorage.setItem("JSON", json);
 
+    console.log(json);
     navigate('/matching');
-
   }
 
   return ( // call form handler on submit
     <>
       <div>
         <h1>Please enter your preferences:</h1>
-        <form onSubmit={ handleForm }>
+        <form onSubmit={ handleForm } className="home-form">
         <label>Please enter the type of the charity: </label>
         <input type="text" name="theme" id="theme_entry" required></input>
         <label>Please enter your budget: </label> 

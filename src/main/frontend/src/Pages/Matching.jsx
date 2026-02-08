@@ -1,8 +1,11 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
+import '/src/App.css'
 
 function Matching() {
+    const navigate = useNavigate();
+
     return (
         <>
             <Link to="/"></Link>
@@ -13,7 +16,7 @@ function Matching() {
                 <button type="button" id="yesButtonLink"> Yes </button>
                 <button type="button" id="noButtonLink"> No </button>
             </dialog>
-            <button type="button" id="finalizeLink"> Finalize matching </button>
+            <button type="button" id="finalizeLink" onClick={ () => { navigate('/results')} }> Finalize matching </button>
         </>
     )
 }

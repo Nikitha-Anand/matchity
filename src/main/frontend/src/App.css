@@ -1,3 +1,26 @@
-:root {
+* {
+  margin: 0;
+  /* padding: 0;
+  border: 0; */
   vertical-align: baseline;
+}
+
+#root {
+  margin: 1em;
+  flex-direction: column;
+  display: flex;
+}
+
+.home-form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  max-width: 200px;
+  cursor: pointer;
+}
+
+input {
+  max-width: 200px;
 }
