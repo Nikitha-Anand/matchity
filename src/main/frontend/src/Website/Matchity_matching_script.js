@@ -93,7 +93,7 @@ finalizeBtn.addEventListener("click", () => {
 function showCurrent() {
     if (finalized || currentIndex >= data.length) {
         dialog.close();
-        alert("You’ve seen all matches!");
+        window.location.href = "Matchity_Result.html";
         return;
     }
 

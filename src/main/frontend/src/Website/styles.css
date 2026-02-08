@@ -196,3 +196,28 @@ dialog::backdrop {
         opacity: 1;
     }
 }
+
+.results-card {
+    max-width: 750px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    font-family: system-ui, sans-serif;
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.results-card p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
