@@ -1,0 +1,164 @@
+/* ---- GLOBAL ---- */
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f6f8ff, #eef1ff);
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---- HEADERS ---- */
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+/* ---- DIALOG CARD ---- */
+
+dialog.card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    animation: pop 0.25s ease-out;
+}
+
+/* backdrop */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* ---- CARD CONTENT ---- */
+
+.card-content {
+    padding: 24px 24px 12px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* ---- URGENCY BADGE ---- */
+
+.urgency-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.urgency-badge.urgent {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ---- ACTION BUTTONS ---- */
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 24px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* NO button */
+.btn.no {
+    background: #c20303;
+    color: #e7e9ed;
+}
+
+.btn.no:hover {
+    background: #910909;
+}
+
+/* YES button */
+.btn.yes {
+    background: #22c55e;
+    color: white;
+}
+
+.btn.yes:hover {
+    background: #16a34a;
+}
+
+/* ---- FINALIZE ---- */
+
+.finalize {
+    width: calc(100% - 48px);
+    margin: 12px 24px 24px;
+    padding: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b7280;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.finalize:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+/* ---- ANIMATION ---- */
+
+@keyframes pop {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
