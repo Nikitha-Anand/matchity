@@ -7,7 +7,7 @@ const urgencyEl = document.getElementById("urgency");
 const yesBtn = document.getElementById("yesButtonLink");
 const noBtn = document.getElementById("noButtonLink");
 
-let data = [];
+export let data = [];
 let currentIndex = 0;
 
 // Fetch data from your GET API
